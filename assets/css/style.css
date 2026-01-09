@@ -1,0 +1,208 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-font: "Roboto", sans-serif;
+    --secondary-font: "Roboto", cursive;
+    --primary-color: #2b6abc; /* dark brown */
+    --secondary-color: #aa9581; /* light brown*/
+    --highlight-color: #416a8e; /* blue */
+    --highlight-color-light: #7a9fc2; /* light blue */
+}
+
+/* Global styles */
+
+body {
+    font-family: var(--primary-font);
+    padding-top: 57.15px; /* Pushes the top of the header under fixed navbar */
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--secondary-font);
+    color: var(--primary-color); 
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+.hero-logo {
+    width: 70%;
+    height: auto;
+}
+
+.sub-heading-color {
+    color: var(--highlight-color);
+}
+
+.section{
+    padding-top: 4rem; /* Prevent navbar overlap */
+}
+
+/* Buttons */
+.custom-button-filled {
+    border: 2px solid var(--highlight-color);
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+.custom-button-filled:hover {
+    border: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.custom-button-outline {
+    border: 3px solid var(--highlight-color);
+    padding: 7px 25px;
+    color: var(--highlight-color);
+}
+
+.custom-button-outline:hover {
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+
+/* Navbar */
+#navbar {
+    background-color: var(--primary-color);
+}
+
+#navbar .logo {
+    width: 170px;
+    height: auto;
+}
+
+/* Header */
+#header .lead {
+    font-family: var(--secondary-font);
+}
+
+/* Services */
+#services .card-footer {
+    font-weight: bold;
+    color: var(--highlight-color);
+    background-color: transparent;
+}
+
+#services .card {
+    margin-bottom: 1.5rem;
+}
+
+/* Events */
+
+#events .table {
+        /* events table font size small enough that 
+      the table doesn't overflow on xs screens. 
+      Size set back to 1rem in a media query 
+      for sm screens and up */
+      font-size: 0.7rem;
+}
+
+.student-discount {
+    background-color: var(--highlight-color);
+    font-weight: bold;
+    color: white;
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+
+}
+
+/* Game library cards */
+
+#new-games .card,
+#fav-games .card {
+    border: none;
+}
+
+/* Footer / contact */
+#contact {
+    background-color: var(--primary-color);
+    color: white;
+    padding-bottom: 3rem;
+}
+#contact h2 {
+    color: white;
+}
+#contact .sub-heading-color {
+    color: var(--highlight-color-light)
+}
+
+#contact i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+#contact .social-links i {
+    color: var(--highlight-color-light);
+    font-size: 1.9rem;
+    -webkit-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+#contact .social-links i:hover {
+    color: var(--secondary-color);
+}
+
+#contact .table-dark * {
+    background-color: transparent;
+}
+
+/* Media queries */
+
+/* Small screens and up */
+@media screen and (min-width: 567px) {
+    /* Increase font size in events table when screen size is large enough */
+    #events .table {
+        font-size: 1rem;
+    }
+    .student-discount {
+        font-size: 1rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up */
+@media screen and (min-width: 768px) {
+    /* Make all service cards the same height for consistency */
+    #services .card-body {
+        min-height: 191px;
+    }
+}
+
+/* Large devices (small laptops, 992px and up */
+@media screen and (min-width: 992px) {
+    /* Make all service cards the same height for consistency */
+    #services .card-body {
+        min-height: auto;
+    }
+}
+
+/* Extra large devices (tablets, 1200px and up */
+@media screen and (min-width: 1200px) {
+    /* Make all service cards the same height for consistency */
+    #services .card-body {
+        min-height: 220px;
+    }
+}
+
+/* Extra extra large devices (small laptops, 1400px and up */
+@media screen and (min-width: 1400px) {
+    /* Make all service cards the same height for consistency */
+    #services .card-body {
+        min-height: 195px;
+    }
+}
