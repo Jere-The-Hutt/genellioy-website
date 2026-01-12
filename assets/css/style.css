@@ -6,7 +6,7 @@
     --primary-font: "Roboto", sans-serif;
     --secondary-font: "Roboto", cursive;
     --primary-color: #2b6abc; /* dark brown */
-    --secondary-color: #aa9581; /* light brown*/
+    --secondary-color: #fcfcfc; /* light brown*/
     --highlight-color: #416a8e; /* blue */
     --highlight-color-light: #7a9fc2; /* light blue */
 }
@@ -160,6 +160,11 @@ h2 {
 
 #contact .table-dark * {
     background-color: transparent;
+}
+
+.footer-badge {
+    height: auto;
+    width: 200px;
 }
 
 /* Media queries */
