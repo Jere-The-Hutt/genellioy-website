@@ -118,61 +118,94 @@
 
     <!-- Footer / contact section -->
     <!-- mt-auto added to push footer to the bottom of the page -->
-    <footer id="contact" class="mt-auto">
-        <div class="container section">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center">
-                    <h2 class="display-6">Ota yhteyttä</h2>
-                </div>
-                <!-- Contact info -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <h3 class="sub-heading-color">Yhteystiedot</h3>
-                    <p><strong>Reijo Huttunen</strong> - Toimitusjohtaja<br>
-                        <i class="fa-regular fa-paper-plane"></i> genellioyab@outlook.com
-                    </p>
-                    <p><strong>Tero Laaksonen</strong> - Ammattikeittiö laite asennukset<br>
-                        <i class="fa-solid fa-phone"></i> 0400 906031
-                    </p>
-                    <p><strong>Teemu Kinnunen</strong> - Ammattikeittiö laite asennukset, ilmalämpöpumput<br>
-                        <i class="fa-solid fa-phone"></i> 0400 732567
-                    </p>
-                </div>
-                <div class="col-12 col-md-4 text-center mt-3">
-                    <form action="success.html" method="GET">
-                        <div class="row justify-content-center">
-                            <div class="col-10 col-md-10 mb-3">
-                                <input class="form-control" id="name" name="name" type="text" required>
-                                <label class="form-label sub-heading-color mt-1" for="name">Koko nimi</label>
-                            </div>
-                            <div class="col-10 col-md-10 mb-3">
-                                <input class="form-control" id="email-footer" name="email" type="email" required>
-                                <label class="form-label sub-heading-color mt-1"
-                                    for="email-footer">Sähköpostiosoite</label>
-                            </div>
-                            <div class="col-10 col-md-10 mb-2">
-                                <textarea class="form-control" id="message-footer" name="message" rows="5"
-                                    required></textarea>
-                                <label class="form-label sub-heading-color mt-1" for="message-footer">Viesti</label>
-                            </div>
-                            <div id="button-contact" class="text-center justify-content-center">
-                                <button type="submit" class="btn custom-button-filled mt-4">Lähetä</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div>
-                    <p>
-                        <i>Y-Tunnus</i> 2276227-6
-                    </p>
-                </div>
-                <div>
-                    <a href="https://zeckit.com/selvitys/FI/2276227-6?section=quickcheck" rel="noopener"
-                        target="_blank">
-                        <img src="assets/images/luotettava-kumppani-logo-valkoinen.png" alt="Luotettava Kumppani"></a>
-                </div>
+<footer id="contact" class="mt-auto footer">
+    <div class="container section">
+
+        <!-- Upper footer: contact + form -->
+        <div class="row justify-content-between">
+
+            <!-- Contact info LEFT -->
+            <div class="col-12 col-md-6 col-xl-5 footer-contact">
+                <h2 class="display-6">Ota yhteyttä</h2>
+
+                <h3 class="sub-heading-color mt-4">Yhteystiedot</h3>
+
+                <p>
+                    <strong>Reijo Huttunen</strong><br>
+                    Toimitusjohtaja<br>
+                    <i class="fa-regular fa-paper-plane"></i>
+                    <a href="mailto:genellioyab@outlook.com">genellioyab@outlook.com</a>
+                </p>
+
+                <p>
+                    <strong>Tero Laaksonen</strong><br>
+                    Ammattikeittiölaitteiden asennukset<br>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:0400906031">0400 906031</a>
+                </p>
+
+                <p>
+                    <strong>Teemu Kinnunen</strong><br>
+                    Ammattikeittiölaitteiden asennukset, ilmalämpöpumput<br>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:0400732567">0400 732567</a>
+                </p>
+            </div>
+
+            <!-- Contact form RIGHT -->
+            <div class="col-12 col-md-6 col-xl-5 footer-form mt-4 mt-md-0">
+                <form action="success.html" method="GET">
+                    <div class="mb-3">
+                        <label for="name" class="form-label sub-heading-color">Koko nimi</label>
+                        <input class="form-control" id="name" name="name" type="text" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email-footer" class="form-label sub-heading-color">
+                            Sähköpostiosoite
+                        </label>
+                        <input class="form-control" id="email-footer" name="email" type="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message-footer" class="form-label sub-heading-color">Viesti</label>
+                        <textarea class="form-control" id="message-footer"
+                                  name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn custom-button-filled mt-3">
+                        Lähetä
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
+
+        <!-- Divider -->
+        <hr class="footer-divider">
+
+        <!-- Bottom footer -->
+        <div class="row align-items-center footer-bottom">
+
+            <div class="col-12 col-md-6 text-center text-md-start">
+                <p class="mb-0">
+                    <i>Y-Tunnus</i> 2276227-6
+                </p>
+            </div>
+
+            <div class="col-12 col-md-6 text-center text-md-end mt-3 mt-md-0">
+                <a href="https://zeckit.com/selvitys/FI/2276227-6?section=quickcheck"
+                   target="_blank"
+                   rel="noopener"
+                   class="trusted-partner">
+                    <img src="assets/images/luotettava-kumppani-logo-valkoinen.png"
+                         alt="Luotettava Kumppani">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
