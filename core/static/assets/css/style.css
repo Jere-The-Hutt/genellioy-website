@@ -5,7 +5,7 @@
 :root {
     --primary-font: "Roboto", sans-serif;
     --secondary-font: "Roboto", cursive;
-    --primary-color: #2b6abc; /* dark brown */
+    --primary-color: #0165A2; /* dark brown */
     --secondary-color: #fcfcfc; /* light brown*/
     --highlight-color: #416a8e; /* blue */
     --highlight-color-light: #7a9fc2; /* light blue */
@@ -15,7 +15,7 @@
 
 body {
     font-family: var(--primary-font);
-    padding-top: 57.15px; /* Pushes the top of the header under fixed navbar */
+    padding-top: 50px; /* Pushes the top of the header under fixed navbar */
 }
 
 h1,
@@ -37,10 +37,16 @@ h2 {
 .hero-logo {
     width: 70%;
     height: auto;
+    filter: drop-shadow(rgb(255, 255, 255) 5px 0 50px);
+    margin-left: 20px;
+}
+
+#header-text h1 {
+    font-weight: bold;
 }
 
 .sub-heading-color {
-    color: var(--highlight-color);
+    color: var(--primary-color);
 }
 
 .section{
@@ -87,10 +93,51 @@ h2 {
     font-family: var(--secondary-font);
 }
 
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark overlay for readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(252, 252, 252, 0.45); /* Using the secondary color with transparency */
+}
+
+/* Keep content above overlay */
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Text styling */
+#header-text {
+    color: var(--secondary-color);
+    text-shadow: black 1px 0 5px;;
+}
+
+#header-text h1,
+#header-text h2 {
+    color: var(--secondary-color);
+}
+
+
 /* Services */
+#services h2 {
+    font-weight: 500;
+    color: var(--highlight-color);
+}
+
 #services .card-footer {
     font-weight: bold;
-    color: var(--highlight-color);
     background-color: transparent;
 }
 
@@ -98,26 +145,8 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-/* Events */
-
-#events .table {
-        /* events table font size small enough that 
-      the table doesn't overflow on xs screens. 
-      Size set back to 1rem in a media query 
-      for sm screens and up */
-      font-size: 0.7rem;
-}
-
-.student-discount {
-    background-color: var(--highlight-color);
-    font-weight: bold;
-    color: white;
-    display: block;
-    max-width: 300px;
-    margin: auto;
-    padding: 5px 10px;
-    font-size: 0.8rem;
-
+.card {
+    background-color: var(--secondary-color);
 }
 
 /* Game library cards */
@@ -135,9 +164,10 @@ h2 {
 }
 #contact h2 {
     color: white;
+    font-weight: 500;
 }
 #contact .sub-heading-color {
-    color: var(--highlight-color-light)
+    color: var(--secondary-color);
 }
 
 #contact i {
@@ -162,9 +192,22 @@ h2 {
     background-color: transparent;
 }
 
+.phone-link {
+    color: var(--secondary-color);
+}
+
+.phone-link:hover {
+    color: var(--highlight-color-light);
+}
+
 .footer-badge {
     height: auto;
-    width: 200px;
+    width: 300px;
+}
+
+.footer-bottom {
+    padding: 5px 5px;
+    font-size: 0.9rem;
 }
 
 /* Media queries */
@@ -173,9 +216,6 @@ h2 {
 @media screen and (min-width: 567px) {
     /* Increase font size in events table when screen size is large enough */
     #events .table {
-        font-size: 1rem;
-    }
-    .student-discount {
         font-size: 1rem;
     }
 }
@@ -209,5 +249,19 @@ h2 {
     /* Make all service cards the same height for consistency */
     #services .card-body {
         min-height: 195px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .hero-logo {
+        width: 50%;
+    }
+}
+
+/* XL and up */
+@media (min-width: 1200px) {
+    .hero-logo {
+        width: 70%;
     }
 }

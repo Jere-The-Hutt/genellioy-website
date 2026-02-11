@@ -3,26 +3,34 @@
 
 {% block content %}
 
-<header id="header" class="container section">
-    <div class="row">
-        <div class="col-12 col-xl-6 text-center">
-            <img src="{% static 'assets/images/Genelli_logo_sini.png' %}" alt="Genelli Oy logo" class="hero-logo ml-md-2 mt-3">
-        </div>
-        <div id="header-text" class="col-xl-6 text-center text-xl-start">
-            <h1 class="display-4">asennuspalvelut</h1>
-            <h2>Luotettava kumppani joka tilanteeseen</h2>
-            <ul class="text-start">
-                <li>Suurkeittiölaitteiden asennus</li>
-                <li>Ilmalämpöpumput</li>
-            </ul>
-            <p>
-                Genelli Oy on monipuolinen asennusalan yritys, joka palvelee niin yritys- kuin yksityisasiakkaita.
-                Tarjoamme suurkeittiöiden ammattimaiset asennuspalvelut sekä ilmalämpöpumppujen asennukset ja
-                huollot, aina kohteen tarpeet ja laatu edellä.
-            </p>
+<header id="header"
+        class="hero"
+        style="background-image: url('{% static "assets/images/angelina-kusznirewicz-h3JLBMq7haM-unsplash-edit-01.jpg" %}');">
+    <div class="container section">
+        <div class="row align-items-center">
+            <div class="col-12 col-xl-6 text-center">
+                <img src="{% static 'assets/images/Genelli_logo_sini.png' %}"
+                     alt="Genelli Oy logo"
+                     class="hero-logo mt-2 mb-5">
+            </div>
+
+            <div id="header-text" class="col-12 col-xl-6 text-center text-xl-start mb-5">
+                <h1 class="display-4">asennuspalvelut</h1>
+                <h2>Luotettava kumppani joka tilanteeseen</h2>
+                <ul class="text-start">
+                    <li>Suurkeittiölaitteiden asennus</li>
+                    <li>Ilmalämpöpumput</li>
+                </ul>
+                <p>
+                    Genelli Oy on monipuolinen asennusalan yritys, joka palvelee niin yritys- kuin yksityisasiakkaita.
+                    Tarjoamme suurkeittiöiden ammattimaiset asennuspalvelut sekä ilmalämpöpumppujen asennukset ja
+                    huollot, aina kohteen tarpeet ja laatu edellä.
+                </p>
+            </div>
         </div>
     </div>
 </header>
+
 
 <!-- main element to hold all key sections of the home page. It is not part of the grid structure -->
 <main>
@@ -49,7 +57,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="card">
-                    <img src="{% static 'assets/images/caroline-badran-BsHycOlU6Bg-unsplash.jpg' %}" class="card-img-top"
+                    <img src="{% static 'assets/images/ilmalämpöpumppu-asennus.jpg' %}" class="card-img-top"
                         alt="Board games stacked in bookshelves, a man can be seen browsing the shelves">
                     <div class="card-body">
                         <!-- bootstrap cards come as h5 by default, changed to h3 to fit project heading hierarchy -->
