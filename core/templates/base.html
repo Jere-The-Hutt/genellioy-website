@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80"
+    tabindex="0">
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
         <div class="container">
@@ -30,40 +31,36 @@
                 <img src="{% static 'assets/images/Genelli_teksti_valko_navbar.png' %}" alt="Genelli Oy logo"
                     class="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto text-end">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Koti</a>
+                        <a class="nav-link" href="#header">Koti</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Palvelut</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Yhteystiedot</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn custom-button-filled ms-lg-3">Ota yhteyttä</a>
+                        <a class="nav-link" href="#contact">Ota yhteyttä</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-{% if messages %}
-  <div class="position-fixed start-50 translate-middle-x w-100 p-3" 
-       style="top: 57px; z-index: 1100;">
-    {% for message in messages %}
-      <div class="alert alert-success alert-dismissible fade show text-center mx-auto" 
-           role="alert" style="max-width: 600px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
-        {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    {% endfor %}
-  </div>
-{% endif %}
+    {% if messages %}
+    <div class="position-fixed start-50 translate-middle-x w-100 p-3" style="top: 57px; z-index: 1100;">
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show text-center mx-auto" role="alert"
+            style="max-width: 600px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
     <!-- Main content -->
     <main>
         {% block content %}
@@ -183,6 +180,12 @@
                 }, 5000); // 5000ms = 5 seconds
             });
         });
+    </script>
+    <script>
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '#mainNavbar',
+            offset: 100
+        })
     </script>
     {% block extra_js %}{% endblock %}
 

@@ -1,32 +1,37 @@
-/* Google fonts import */
+/* ================================
+   GOOGLE FONTS
+================================ */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* CSS Variables */
+
+/* ================================
+   CSS VARIABLES
+================================ */
 :root {
     --primary-font: "Roboto", sans-serif;
-    --secondary-font: "Roboto", cursive;
-    --primary-color: #0165A2; /* dark brown */
-    --secondary-color: #fcfcfc; /* light brown*/
-    --highlight-color: #416a8e; /* blue */
-    --highlight-color-light: #7a9fc2; /* light blue */
+    --secondary-font: "Roboto", sans-serif;
+
+    --primary-color: #0165A2;
+    --secondary-color: #fcfcfc;
+    --highlight-color: #416a8e;
+    --highlight-color-light: #7a9fc2;
 }
 
-/* Global styles */
 
+/* ================================
+   GLOBAL STYLES
+================================ */
 body {
     font-family: var(--primary-font);
-    padding-top: 50px; /* Pushes the top of the header under fixed navbar */
+    padding-top: 50px; /* offset for fixed navbar */
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: var(--secondary-font);
-    color: var(--primary-color); 
+    color: var(--primary-color);
 }
 
-h1,
-h2 {
+h1, h2 {
     text-transform: uppercase;
 }
 
@@ -34,26 +39,104 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.hero-logo {
-    width: 70%;
-    height: auto;
-    filter: drop-shadow(rgb(255, 255, 255) 5px 0 50px);
-    margin-left: 20px;
-}
-
-#header-text h1 {
-    font-weight: bold;
+.section {
+    padding-top: 4rem;
 }
 
 .sub-heading-color {
     color: var(--primary-color);
 }
 
-.section{
-    padding-top: 4rem; /* Prevent navbar overlap */
+
+/* ================================
+   NAVBAR
+================================ */
+#navbar {
+    background-color: var(--primary-color);
 }
 
-/* Buttons */
+#navbar .logo {
+    width: 170px;
+    height: auto;
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    position: relative;
+    min-height: 70vh;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+    background-image: url("../images/angelina-kusznirewicz-h3JLBMq7haM-unsplash-edit-01.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Animated blur + overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0);
+    animation: blurHero 1.4s ease forwards;
+    animation-delay: 0.6s;
+    z-index: 0;
+}
+
+@keyframes blurHero {
+    to {
+        backdrop-filter: blur(6px);
+        background: rgba(150, 150, 150, 0.45);
+    }
+}
+
+/* Hero content animation */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInHero 1.2s ease forwards;
+    animation-delay: 1.1s;
+}
+
+@keyframes fadeInHero {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero text styling */
+#header-text {
+    color: var(--secondary-color);
+    text-shadow: 1px 0 5px black;
+}
+
+#header-text h1,
+#header-text h2 {
+    color: var(--secondary-color);
+}
+
+/* Hero logo */
+.hero-logo {
+    width: 70%;
+    height: auto;
+    margin-left: 20px;
+    filter: drop-shadow(rgba(255, 255, 255, 0.7) 5px 0 50px);
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
 .custom-button-filled {
     border: 2px solid var(--highlight-color);
     background-color: var(--highlight-color);
@@ -78,62 +161,16 @@ h2 {
 }
 
 
-/* Navbar */
-#navbar {
-    background-color: var(--primary-color);
-}
-
-#navbar .logo {
-    width: 170px;
-    height: auto;
-}
-
-/* Header */
-#header .lead {
-    font-family: var(--secondary-font);
-}
-
-.hero {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 50vh;
-    max-height: 70vh;
-    display: flex;
-    align-items: center;
-}
-
-/* Dark overlay for readability */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(252, 252, 252, 0.45); /* Using the secondary color with transparency */
-}
-
-/* Keep content above overlay */
-.hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-/* Text styling */
-#header-text {
-    color: var(--secondary-color);
-    text-shadow: black 1px 0 5px;;
-}
-
-#header-text h1,
-#header-text h2 {
-    color: var(--secondary-color);
-}
-
-
-/* Services */
+/* ================================
+   SERVICES
+================================ */
 #services h2 {
     font-weight: 500;
     color: var(--highlight-color);
+}
+
+#services .card {
+    margin-bottom: 1.5rem;
 }
 
 #services .card-footer {
@@ -141,24 +178,25 @@ h2 {
     background-color: transparent;
 }
 
-#services .card {
-    margin-bottom: 1.5rem;
-}
-
 .card {
     background-color: var(--secondary-color);
 }
 
-/* Footer / contact */
+
+/* ================================
+   CONTACT / FOOTER
+================================ */
 #contact {
     background-color: var(--primary-color);
     color: white;
     padding-bottom: 3rem;
 }
+
 #contact h2 {
     color: white;
     font-weight: 500;
 }
+
 #contact .sub-heading-color {
     color: var(--secondary-color);
 }
@@ -172,8 +210,6 @@ h2 {
 #contact .social-links i {
     color: var(--highlight-color-light);
     font-size: 1.9rem;
-    -webkit-transition: color 0.3s ease-in-out;
-    -o-transition: color 0.3s ease-in-out;
     transition: color 0.3s ease-in-out;
 }
 
@@ -194,67 +230,59 @@ h2 {
 }
 
 .footer-badge {
-    height: auto;
     width: 300px;
+    height: auto;
 }
 
 .footer-bottom {
-    padding: 5px 5px;
+    padding: 5px;
     font-size: 0.9rem;
 }
 
-/* Media queries */
 
-/* Small screens and up */
-@media screen and (min-width: 567px) {
-    /* Increase font size in events table when screen size is large enough */
+/* ================================
+   MEDIA QUERIES
+================================ */
+
+/* Small devices */
+@media (min-width: 567px) {
     #events .table {
         font-size: 1rem;
     }
 }
 
-/* Medium devices (tablets, 768px and up */
-@media screen and (min-width: 768px) {
-    /* Make all service cards the same height for consistency */
+/* Medium devices */
+@media (min-width: 768px) {
     #services .card-body {
         min-height: 191px;
     }
-}
 
-/* Large devices (small laptops, 992px and up */
-@media screen and (min-width: 992px) {
-    /* Make all service cards the same height for consistency */
-    #services .card-body {
-        min-height: auto;
-    }
-}
-
-/* Extra large devices (tablets, 1200px and up */
-@media screen and (min-width: 1200px) {
-    /* Make all service cards the same height for consistency */
-    #services .card-body {
-        min-height: 220px;
-    }
-}
-
-/* Extra extra large devices (small laptops, 1400px and up */
-@media screen and (min-width: 1400px) {
-    /* Make all service cards the same height for consistency */
-    #services .card-body {
-        min-height: 195px;
-    }
-}
-
-/* Medium screens (tablets) */
-@media (min-width: 768px) and (max-width: 1199px) {
     .hero-logo {
         width: 50%;
     }
 }
 
-/* XL and up */
+/* Large devices */
+@media (min-width: 992px) {
+    #services .card-body {
+        min-height: auto;
+    }
+}
+
+/* Extra large */
 @media (min-width: 1200px) {
+    #services .card-body {
+        min-height: 220px;
+    }
+
     .hero-logo {
         width: 70%;
+    }
+}
+
+/* XXL */
+@media (min-width: 1400px) {
+    #services .card-body {
+        min-height: 195px;
     }
 }
