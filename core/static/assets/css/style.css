@@ -149,13 +149,6 @@ h2 {
     background-color: var(--secondary-color);
 }
 
-/* Game library cards */
-
-#new-games .card,
-#fav-games .card {
-    border: none;
-}
-
 /* Footer / contact */
 #contact {
     background-color: var(--primary-color);
