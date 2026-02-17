@@ -1,5 +1,6 @@
 # core/forms.py
 from django import forms
+from .models import UserMessage
 
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=100)
@@ -14,3 +15,9 @@ class ContactForm(forms.Form):
         if data:
             raise forms.ValidationError("Bot detected!")
         return data
+    
+
+class UserMessageForm(forms.ModelForm):
+    class Meta:
+        model = UserMessage
+        fields = ['name', 'email', 'message']

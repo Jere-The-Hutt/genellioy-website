@@ -67,8 +67,8 @@ h2 {
 
 .hero {
     position: relative;
-    min-height: 70vh;
-    max-height: 70vh;
+    min-height: 60vh;
+    max-height: 60vh;
     display: flex;
     align-items: center;
     background-image: url("../images/angelina-kusznirewicz-h3JLBMq7haM-unsplash-edit-01.jpg");
@@ -84,7 +84,7 @@ h2 {
     position: absolute;
     inset: 0;
     backdrop-filter: blur(0px);
-    background: rgba(0, 0, 0, 0);
+    background: rgba(40, 80, 154, 0);
     animation: blurHero 1.4s ease forwards;
     animation-delay: 0.6s;
     z-index: 0;
@@ -127,7 +127,7 @@ h2 {
 
 /* Hero logo */
 .hero-logo {
-    width: 70%;
+    width: 80%;
     height: auto;
     margin-left: 20px;
     filter: drop-shadow(rgba(255, 255, 255, 0.7) 5px 0 50px);
@@ -138,14 +138,12 @@ h2 {
    BUTTONS
 ================================ */
 .custom-button-filled {
-    border: 2px solid var(--highlight-color);
-    background-color: var(--highlight-color);
+    background-color: var(--highlight-color-light);
     color: white;
 }
 
 .custom-button-filled:hover {
-    border: 2px solid var(--secondary-color);
-    background-color: var(--secondary-color);
+    background-color: var(--highlight-color);
     color: white;
 }
 

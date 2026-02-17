@@ -3,18 +3,26 @@ from .forms import ContactForm
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
+from .models import UserMessage  # <-- import the model
 
 def index(request):
     form = ContactForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
         name = form.cleaned_data['name']
         email = form.cleaned_data['email']
-        message = form.cleaned_data['message']
+        message_text = form.cleaned_data['message']
+        
+        # Save to the database
+        UserMessage.objects.create(
+            name=name,
+            email=email,
+            message=message_text
+        )
         
         # Send email (for now use console backend)
         send_mail(
             f'New contact from {name}',
-            message,
+            message_text,
             settings.DEFAULT_FROM_EMAIL,
             [settings.DEFAULT_FROM_EMAIL],
             fail_silently=False,
