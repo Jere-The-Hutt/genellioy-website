@@ -60,6 +60,10 @@ h2 {
     height: auto;
 }
 
+a.nav-link {
+    color: rgb(189, 219, 255);
+}
+
 
 /* ================================
    HERO SECTION
