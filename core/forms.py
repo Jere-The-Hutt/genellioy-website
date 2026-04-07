@@ -4,6 +4,7 @@ from .models import UserMessage
 
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=100)
+    subject = forms.CharField(max_length=200)
     email = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea)
 

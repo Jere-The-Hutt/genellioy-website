@@ -2,6 +2,7 @@ from django.db import models
 
 class UserMessage(models.Model):
     name = models.CharField(max_length=100, blank=True)
+    subject = models.CharField(max_length=200)
     email = models.EmailField(blank=True)
     message = models.TextField()
     sent_at = models.DateTimeField(auto_now_add=True)

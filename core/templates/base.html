@@ -111,6 +111,15 @@
                                 value="{{ form.email.value|default_if_none:'' }}" class="form-control" required>
                         </div>
 
+                        <div>
+                            <!-- Subject field -->
+                            <div class="mb-3">
+                                <label for="id_subject" class="form-label sub-heading-color">Aihe</label>
+                                <input type="text" name="subject" id="id_subject"
+                                    value="{{ form.subject.value|default_if_none:'' }}" class="form-control" required>
+                            </div>
+                        </div>
+
                         <!-- Message field -->
                         <div class="mb-3">
                             <label for="id_message" class="form-label sub-heading-color">Viesti</label>
