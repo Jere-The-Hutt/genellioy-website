@@ -26,7 +26,7 @@ def index(request):
             # Send email
             EmailMessage(
                 subject=subject,
-                body=message_text,
+                body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message_text}",
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 to=[settings.DEFAULT_FROM_EMAIL],
                 reply_to=[email],
