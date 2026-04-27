@@ -33,7 +33,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "genellioy.fi",
     "www.genellioy.fi",
-    "genellioyab.eu.pythonanywhere.com"
+    "genellioyab.eu.pythonanywhere.com",
+    "webapp-54886.eu.pythonanywhere.com",
 ]
 
 
