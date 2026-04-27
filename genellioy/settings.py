@@ -28,10 +28,13 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='unsafe-dev-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config(
-    "ALLOWED_HOSTS",
-    default="127.0.0.1,localhost"
-).split(",")
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "genellioy.fi",
+    "www.genellioy.fi",
+    "genellioyab.eu.pythonanywhere.com"
+]
 
 
 
