@@ -27,47 +27,46 @@
 </header>
 
 
-<!-- main element to hold all key sections of the home page. It is not part of the grid structure -->
-<main>
-    <!-- Services section -->
-    <section id="services" class="container section">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <h2 class="display-6">Palvelut</h2>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="card">
-                    <img src="{% static 'assets/images/ricardo-gomez-angel-rO6709B116E-unsplash.jpg' %}"
-                        class="card-img-top" alt="A commercial kitchen with stainless steel appliances">
-                    <div class="card-body">
-                        <h3 class="card-title sub-heading-color">Suurkeittiölaitteiden asennus</h3>
-                        <p class="card-text">
-                            Genelli Oy toteuttaa suurkeittiölaitteiden asennukset luotettavasti ja ammattitaidolla.
-                            Asennamme keittiölaitteet suunnitelmien ja määräysten mukaisesti, jotta keittiö toimii
-                            tehokkaasti ja turvallisesti heti käyttöönotosta alkaen. Palvelemme ravintoloita,
-                            ammattikeittiöitä ja muita ruokapalvelualan toimijoita.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="card">
-                    <img src="{% static 'assets/images/ilmalämpöpumppu-asennus.jpg' %}" class="card-img-top"
-                        alt="A man installing an air source heat pump on the exterior wall of a house">
-                    <div class="card-body">
-                        <!-- bootstrap cards come as h5 by default, changed to h3 to fit project heading hierarchy -->
-                        <h3 class="card-title sub-heading-color">Ilmalämpöpumput</h3>
-                        <p class="card-text">
-                            Tarjoamme ammattitaitoiset ilmalämpöpumppujen asennukset koteihin ja yrityksiin.
-                            Huolehdimme asennuksesta alusta loppuun varmistaen energiatehokkaan, turvallisen ja
-                            pitkäikäisen ratkaisun. Oikein asennettu ilmalämpöpumppu parantaa sisäilmaa ja tuo
-                            merkittäviä säästöjä lämmitys- ja jäähdytyskustannuksiin.
-                        </p>
-                    </div>
+
+<!-- Services section -->
+<section id="services" class="container section">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <h2 class="display-6">Palvelut</h2>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <img src="{% static 'assets/images/ricardo-gomez-angel-rO6709B116E-unsplash.jpg' %}"
+                    class="card-img-top" alt="A commercial kitchen with stainless steel appliances">
+                <div class="card-body">
+                    <h3 class="card-title sub-heading-color">Suurkeittiölaitteiden asennus</h3>
+                    <p class="card-text">
+                        Genelli Oy toteuttaa suurkeittiölaitteiden asennukset luotettavasti ja ammattitaidolla.
+                        Asennamme keittiölaitteet suunnitelmien ja määräysten mukaisesti, jotta keittiö toimii
+                        tehokkaasti ja turvallisesti heti käyttöönotosta alkaen. Palvelemme ravintoloita,
+                        ammattikeittiöitä ja muita ruokapalvelualan toimijoita.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
-</main>
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <img src="{% static 'assets/images/ilmalämpöpumppu-asennus.jpg' %}" class="card-img-top"
+                    alt="A man installing an air source heat pump on the exterior wall of a house">
+                <div class="card-body">
+                    <!-- bootstrap cards come as h5 by default, changed to h3 to fit project heading hierarchy -->
+                    <h3 class="card-title sub-heading-color">Ilmalämpöpumput</h3>
+                    <p class="card-text">
+                        Tarjoamme ammattitaitoiset ilmalämpöpumppujen asennukset koteihin ja yrityksiin.
+                        Huolehdimme asennuksesta alusta loppuun varmistaen energiatehokkaan, turvallisen ja
+                        pitkäikäisen ratkaisun. Oikein asennettu ilmalämpöpumppu parantaa sisäilmaa ja tuo
+                        merkittäviä säästöjä lämmitys- ja jäähdytyskustannuksiin.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock %}

@@ -22,8 +22,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
 
-<body class="d-flex flex-column min-vh-100" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70"
-    tabindex="0">
+<body class="d-flex flex-column min-vh-100 position-relative">
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
         <div class="container">
@@ -138,16 +137,32 @@
             <hr class="footer-divider">
 
             <div class="row align-items-center footer-bottom">
+
+                <!-- Left side -->
                 <div class="col-12 col-md-6 text-center text-md-start">
                     <p class="mb-0"><i>Y-Tunnus</i> 2276227-6</p>
                 </div>
-                <div class="col-12 col-md-6 text-center text-md-end mt-3 mt-md-0">
-                    <a href="https://zeckit.com/selvitys/FI/2276227-6?section=quickcheck" target="_blank" rel="noopener"
-                        class="trusted-partner">
-                        <img src="{% static 'assets/images/luotettava-kumppani-logo-valkoinen.png' %}"
-                            alt="Luotettava Kumppani" class="footer-badge">
-                    </a>
+
+                <!-- Right side -->
+                <div class="col-12 col-md-6">
+                    <div
+                        class="footer-badges d-flex justify-content-center justify-content-md-end align-items-center gap-3 mt-3 mt-md-0">
+
+                        <a href="https://zeckit.com/selvitys/FI/2276227-6?section=quickcheck" target="_blank"
+                            rel="noopener" class="trusted-partner">
+                            <img src="{% static 'assets/images/luotettava-kumppani-logo-valkoinen.png' %}"
+                                alt="Luotettava Kumppani" class="footer-badge">
+                        </a>
+
+                        <a href="https://zeckit.com/selvitys/FI/2276227-6?section=quickcheck" target="_blank"
+                            rel="noopener" class="trusted-partner">
+                            <img src="{% static 'assets/images/LK_luottamusmerkki_Luottamusmerkki-10-vuotta.png' %}"
+                                alt="Luotettava Kumppani 10 vuotta" class="footer-badge">
+                        </a>
+
+                    </div>
                 </div>
+
             </div>
             {% endblock %}
         </div>
@@ -155,8 +170,18 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script>
+        window.addEventListener('load', () => {
+            const spy = new bootstrap.ScrollSpy(document.body, {
+                target: '#navbar',
+                offset: document.querySelector('.navbar').offsetHeight
+            });
+
+            spy.refresh();
+        });
+    </script>
 
     <!-- Font Awesome kit -->
     <script src="https://kit.fontawesome.com/a7aea892be.js" crossorigin="anonymous"></script>
@@ -164,15 +189,16 @@
     <!-- Navbar smooth scroll -->
     <script>
         document.querySelectorAll(".navbar-collapse .nav-link").forEach((link) => {
-            link.addEventListener("click", function (e) {
-                let section = document.querySelector(e.target.getAttribute("href"));
+            link.addEventListener("click", function () {
+
+                const section = document.querySelector(this.getAttribute("href"));
+
                 if (section) {
-                    e.preventDefault();
-                    let navbarHeight = document.querySelector(".navbar-toggler").offsetHeight;
-                    window.scroll({
-                        top: section.offsetTop - navbarHeight,
+                    section.scrollIntoView({
                         behavior: "smooth",
+                        block: "start"
                     });
+
                     document.querySelector(".navbar-collapse").classList.remove("show");
                 }
             });

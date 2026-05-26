@@ -23,6 +23,7 @@
 ================================ */
 html {
     -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
 
 html, body {
     overflow-x: hidden;
+    height: 100%;
 }
 
 .row {
