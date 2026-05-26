@@ -21,9 +21,23 @@
 /* ================================
    GLOBAL STYLES
 ================================ */
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 80px;
+}
+
 body {
     font-family: var(--primary-font);
     padding-top: 50px; /* offset for fixed navbar */
+}
+
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.row {
+    flex-wrap: wrap;
 }
 
 h1, h2, h3 {
@@ -72,7 +86,7 @@ a.nav-link {
 .hero {
     position: relative;
     min-height: 60vh;
-    max-height: 60vh;
+    height: auto;
     display: flex;
     align-items: center;
     background-image: url("../images/pro-0AwHMZ03.jpeg");
@@ -131,10 +145,15 @@ a.nav-link {
 
 /* Hero logo */
 .hero-logo {
-    width: 80%;
+    width: clamp(200px, 50vw, 600px);
     height: auto;
     margin-left: 20px;
     filter: drop-shadow(rgba(255, 255, 255, 0.7) 5px 0 50px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 
