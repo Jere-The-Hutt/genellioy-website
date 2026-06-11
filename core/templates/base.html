@@ -91,47 +91,6 @@
                         <a class="phone-link" href="tel:0400732567">0400 732567</a>
                     </p>
                 </div>
-
-                <!-- Contact form RIGHT -->
-                <div class="col-12 col-md-6 col-xl-5 footer-form mt-4 mt-md-0">
-                    <form action="" method="POST">
-                        {% csrf_token %}
-                        <!-- Name field -->
-                        <div class="mb-3">
-                            <label for="id_name" class="form-label sub-heading-color">Koko nimi</label>
-                            <input type="text" name="name" id="id_name" value="{{ form.name.value|default_if_none:'' }}"
-                                class="form-control" required>
-                        </div>
-
-                        <!-- Email field -->
-                        <div class="mb-3">
-                            <label for="id_email" class="form-label sub-heading-color">Sähköpostiosoite</label>
-                            <input type="email" name="email" id="id_email"
-                                value="{{ form.email.value|default_if_none:'' }}" class="form-control" required>
-                        </div>
-
-                        <div>
-                            <!-- Subject field -->
-                            <div class="mb-3">
-                                <label for="id_subject" class="form-label sub-heading-color">Aihe</label>
-                                <input type="text" name="subject" id="id_subject"
-                                    value="{{ form.subject.value|default_if_none:'' }}" class="form-control" required>
-                            </div>
-                        </div>
-
-                        <!-- Message field -->
-                        <div class="mb-3">
-                            <label for="id_message" class="form-label sub-heading-color">Viesti</label>
-                            <textarea name="message" id="id_message" rows="5" class="form-control"
-                                required>{{ form.message.value|default_if_none:'' }}</textarea>
-                        </div>
-
-                        <button type="submit" class="btn custom-button-filled mt-3">Lähetä</button>
-                        {{ form.hp_field }}
-                    </form>
-                </div>
-
-
             </div>
 
             <hr class="footer-divider">
